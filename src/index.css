@@ -142,6 +142,33 @@ body::after {
   animation-duration: 6.4s;
 }
 
+.about-orb {
+  animation-name: about-orb-float;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.about-orb-a {
+  animation-duration: 6.8s;
+}
+
+.about-orb-b {
+  animation-duration: 5.9s;
+  animation-delay: -1.2s;
+}
+
+.about-orb-c {
+  animation-duration: 6.4s;
+  animation-delay: -2.1s;
+}
+
+.about-orb-d {
+  animation-duration: 5.7s;
+  animation-delay: -0.7s;
+}
+
 @keyframes services-scroll {
   from {
     transform: translateX(0);
@@ -177,6 +204,22 @@ body::after {
   }
 }
 
+@keyframes about-orb-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  25% {
+    transform: translate3d(6px, -10px, 0) scale(1.04);
+  }
+  50% {
+    transform: translate3d(-4px, 8px, 0) scale(0.98);
+  }
+  75% {
+    transform: translate3d(5px, -4px, 0) scale(1.03);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .services-marquee-track {
     animation: none;
@@ -184,6 +227,7 @@ body::after {
 
   body::before,
   body::after,
+  .about-orb,
   .gallery-float,
   .motion-reveal {
     animation: none;

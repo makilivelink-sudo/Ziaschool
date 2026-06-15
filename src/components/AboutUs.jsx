@@ -80,10 +80,10 @@ export default function AboutUs() {
           </div>
 
           <div className="relative mx-auto w-full max-w-[470px] lg:mr-0">
-            <div className="absolute -left-6 top-20 h-16 w-16 rounded-full bg-[#ffb400] shadow-lg" />
-            <div className="absolute -left-2 bottom-8 h-12 w-12 rounded-full bg-[#ff4d3d]" />
-            <div className="absolute -right-3 bottom-16 h-14 w-14 rounded-full bg-[#ffb400] shadow-lg" />
-            <div className="absolute -right-6 top-24 h-10 w-10 rounded-full bg-[#ffb400]" />
+            <div className="about-orb about-orb-a absolute -left-6 top-20 h-16 w-16 rounded-full bg-[#ffb400] shadow-lg" />
+            <div className="about-orb about-orb-b absolute -left-2 bottom-8 h-12 w-12 rounded-full bg-[#ff4d3d]" />
+            <div className="about-orb about-orb-c absolute -right-3 bottom-16 h-14 w-14 rounded-full bg-[#ffb400] shadow-lg" />
+            <div className="about-orb about-orb-d absolute -right-6 top-24 h-10 w-10 rounded-full bg-[#ffb400]" />
 
             <div className="relative rounded-full border-[6px] border-[#ff1717] bg-white p-2 shadow-2xl">
               <div className="overflow-hidden rounded-full">

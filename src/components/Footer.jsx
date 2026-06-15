@@ -123,11 +123,12 @@ export default function Footer() {
 
             <div>
               <h3 className="text-xl font-bold">Quick Links</h3>
-              <div className="group mt-4 rounded-[24px] border border-white/12 bg-white/5 px-5 py-4 text-sm font-medium text-white/90 shadow-[0_14px_30px_rgba(0,0,0,0.08)] backdrop-blur-sm">
+              <div className="group mt-4 cursor-pointer">
                 <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/55 transition group-hover:text-white/75">
                   Hover to reveal links
                 </p>
-                <div className="mt-4 space-y-2">
+                <div className="mt-4 max-h-0 overflow-hidden rounded-[24px] border border-transparent bg-white/0 px-5 py-0 text-sm font-medium text-white/90 opacity-0 shadow-none backdrop-blur-sm transition-all duration-300 ease-out group-hover:max-h-72 group-hover:border-white/12 group-hover:bg-white/5 group-hover:px-5 group-hover:py-4 group-hover:opacity-100 group-hover:shadow-[0_14px_30px_rgba(0,0,0,0.08)]">
+                  <div className="space-y-2">
                   {[
                     { label: 'Home', action: openHome },
                     { label: 'About Us', action: () => openSection('about') },
@@ -144,6 +145,7 @@ export default function Footer() {
                       <span className="opacity-0 transition duration-300 group-hover/link:opacity-100">-&gt;</span>
                     </button>
                   ))}
+                  </div>
                 </div>
               </div>
             </div>
