@@ -123,35 +123,28 @@ export default function Footer() {
 
             <div>
               <h3 className="text-xl font-bold">Quick Links</h3>
-              <div className="mt-4 flex flex-col gap-3 text-sm font-medium text-white/90">
-                <button
-                  type="button"
-                  onClick={openHome}
-                  className="block w-full rounded-xl border border-white/10 px-3 py-2 text-left transition hover:bg-white/10 sm:w-auto"
-                >
-                  Home
-                </button>
-                <button
-                  type="button"
-                  onClick={() => openSection('about')}
-                  className="block w-full rounded-xl border border-white/10 px-3 py-2 text-left transition hover:bg-white/10 sm:w-auto"
-                >
-                  About Us
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setModal('complain')}
-                  className="block w-full rounded-xl border border-white/10 px-3 py-2 text-left transition hover:bg-white/10 sm:w-auto"
-                >
-                  Complain
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setModal('feedback')}
-                  className="block w-full rounded-xl border border-white/10 px-3 py-2 text-left transition hover:bg-white/10 sm:w-auto"
-                >
-                  Feedback
-                </button>
+              <div className="group mt-4 rounded-[24px] border border-white/12 bg-white/5 px-5 py-4 text-sm font-medium text-white/90 shadow-[0_14px_30px_rgba(0,0,0,0.08)] backdrop-blur-sm">
+                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/55 transition group-hover:text-white/75">
+                  Hover to reveal links
+                </p>
+                <div className="mt-4 space-y-2">
+                  {[
+                    { label: 'Home', action: openHome },
+                    { label: 'About Us', action: () => openSection('about') },
+                    { label: 'Complain', action: () => setModal('complain') },
+                    { label: 'Feedback', action: () => setModal('feedback') },
+                  ].map((item) => (
+                    <button
+                      key={item.label}
+                      type="button"
+                      onClick={item.action}
+                      className="group/link flex w-full items-center justify-between rounded-none border-b border-white/10 py-2 text-left text-[15px] font-semibold tracking-wide text-white/85 transition duration-300 hover:border-white/30 hover:text-white sm:w-auto"
+                    >
+                      <span className="transition duration-300 group-hover:translate-x-1">{item.label}</span>
+                      <span className="opacity-0 transition duration-300 group-hover/link:opacity-100">-&gt;</span>
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
 
