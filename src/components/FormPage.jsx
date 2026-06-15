@@ -142,7 +142,8 @@ function ContactItem({ label, value, href }) {
 
 export default function FormPage({ variant }) {
   const config = pageConfigs[variant];
-  const showInfoPanel = variant === 'online-admission' || variant === 'staff-login';
+  // Staff login now shows only the form; the side info panel stays on online admission only.
+  const showInfoPanel = variant === 'online-admission';
   const navigate = useNavigate();
   const initialFields = config?.fields || [];
   const [formValues, setFormValues] = useState(() => buildInitialValues(initialFields));
