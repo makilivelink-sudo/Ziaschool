@@ -1,4 +1,4 @@
-import { founderImage } from '../data/siteData';
+import { aboutPills, founderImage } from '../data/siteData';
 import FallbackImage from './FallbackImage';
 
 export default function AboutUs() {
@@ -66,7 +66,7 @@ export default function AboutUs() {
             </div>
 
             <div className="grid gap-4 pt-2 sm:grid-cols-2">
-              {['Leadership with vision', 'Student-centered learning', 'Discipline & manners', 'Modern education'].map(
+              {aboutPills.map(
                 (item) => (
                   <div
                     key={item}

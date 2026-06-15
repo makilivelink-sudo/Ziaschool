@@ -123,30 +123,25 @@ export default function Footer() {
 
             <div>
               <h3 className="text-xl font-bold">Quick Links</h3>
-              <div className="group mt-4 cursor-pointer">
-                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/55 transition group-hover:text-white/75">
-                  Hover to reveal links
-                </p>
-                <div className="mt-4 max-h-0 overflow-hidden rounded-[24px] border border-transparent bg-white/0 px-5 py-0 text-sm font-medium text-white/90 opacity-0 shadow-none backdrop-blur-sm transition-all duration-300 ease-out group-hover:max-h-72 group-hover:border-white/12 group-hover:bg-white/5 group-hover:px-5 group-hover:py-4 group-hover:opacity-100 group-hover:shadow-[0_14px_30px_rgba(0,0,0,0.08)]">
-                  <div className="space-y-2">
-                  {[
-                    { label: 'Home', action: openHome },
-                    { label: 'About Us', action: () => openSection('about') },
-                    { label: 'Complain', action: () => setModal('complain') },
-                    { label: 'Feedback', action: () => setModal('feedback') },
-                  ].map((item) => (
-                    <button
-                      key={item.label}
-                      type="button"
-                      onClick={item.action}
-                      className="group/link flex w-full items-center justify-between rounded-none border-b border-white/10 py-2 text-left text-[15px] font-semibold tracking-wide text-white/85 transition duration-300 hover:border-white/30 hover:text-white sm:w-auto"
-                    >
-                      <span className="transition duration-300 group-hover:translate-x-1">{item.label}</span>
-                      <span className="opacity-0 transition duration-300 group-hover/link:opacity-100">-&gt;</span>
-                    </button>
-                  ))}
-                  </div>
-                </div>
+              <div className="mt-4 space-y-1 text-[15px] font-semibold tracking-wide text-white/90">
+                {[
+                  { label: 'Home', action: openHome },
+                  { label: 'About Us', action: () => openSection('about') },
+                  { label: 'Complain', action: () => setModal('complain') },
+                  { label: 'Feedback', action: () => setModal('feedback') },
+                ].map((item) => (
+                  <button
+                    key={item.label}
+                    type="button"
+                    onClick={item.action}
+                    className="group flex w-full items-center gap-2 py-2 text-left transition duration-300 hover:text-white"
+                  >
+                    <span>{item.label}</span>
+                    <span className="opacity-0 transition duration-300 group-hover:translate-x-1 group-hover:opacity-100">
+                      -&gt;
+                    </span>
+                  </button>
+                ))}
               </div>
             </div>
 

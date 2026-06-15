@@ -881,20 +881,20 @@ export const menuItems = officialDropdownData.map(({ title, items }) => ({
 
 export const serviceCards = [
   {
-    label: 'Student Hub',
-    badge: 'Student Hub',
+    label: 'Education',
+    badge: 'Digital Classrooms',
     path: '/page/education',
     description: 'Focused academics that build concepts, confidence, and strong study habits.',
   },
   {
-    label: 'Parent Gateway',
-    badge: 'Parent Gateway',
+    label: 'Smart Classes',
+    badge: 'Teacher Training',
     path: '/page/smart-classes',
     description: 'Interactive learning spaces that use modern tools to make lessons clearer and more engaging.',
   },
   {
-    label: 'Behavior & Mentoring',
-    badge: 'Behavior & Mentoring',
+    label: 'Staff Development',
+    badge: 'Student Dashboard',
     path: '/page/staff-development',
     description: 'Training and growth support that helps teachers stay effective, confident, and up to date.',
   },
@@ -914,6 +914,8 @@ export const serviceCards = [
     description: 'A disciplined school environment with mentoring, structure, and behavior guidance.',
   },
 ];
+
+export const aboutPills = ['Student Hub', 'Parent Gateway', 'Behavior & Mentoring'];
 
 export const newsEventsList = [
   {
