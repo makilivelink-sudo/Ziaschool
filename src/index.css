@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-sans bg-white text-slate-900;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  inset: auto;
+  width: 34rem;
+  height: 34rem;
+  border-radius: 9999px;
+  filter: blur(70px);
+  opacity: 0.28;
+  pointer-events: none;
+  z-index: 0;
+  animation: orb-float 18s ease-in-out infinite;
+}
+
+body::before {
+  top: -8rem;
+  right: -10rem;
+  background: radial-gradient(circle, rgba(66, 22, 111, 0.18), rgba(66, 22, 111, 0) 65%);
+}
+
+body::after {
+  bottom: -10rem;
+  left: -12rem;
+  background: radial-gradient(circle, rgba(255, 196, 87, 0.18), rgba(255, 196, 87, 0) 65%);
+  animation-delay: -8s;
+}
+
+#root {
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+.container-page {
+  @apply mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8;
+}
+
+.section-title {
+  @apply text-2xl font-bold text-schoolRed sm:text-3xl;
+}
+
+.section-subtitle {
+  @apply text-sm font-semibold uppercase tracking-[0.25em] text-schoolRed/80;
+}
+
+.card-shell {
+  @apply rounded-2xl border border-red-100 bg-white shadow-soft;
+}
+
+.nav-link {
+  @apply text-[15px] font-semibold text-white/95 transition hover:text-white;
+}
+
+.dropdown-link {
+  @apply block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-red-50 hover:text-schoolRed;
+}
+
+.input-field {
+  @apply w-full rounded-xl border border-red-200 bg-white px-4 py-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-schoolRed focus:ring-2 focus:ring-schoolRed/20;
+}
+
+.btn-red {
+  @apply inline-flex w-full items-center justify-center rounded-xl bg-schoolRed px-5 py-3 text-center text-sm font-bold text-white transition hover:bg-red-700 hover:shadow-soft sm:w-auto;
+}
+
+.btn-outline-red {
+  @apply inline-flex w-full items-center justify-center rounded-xl border border-schoolRed px-5 py-3 text-center text-sm font-bold text-schoolRed transition hover:bg-schoolRed hover:text-white sm:w-auto;
+}
+
+.quote-mark {
+  @apply absolute right-4 top-0 text-7xl leading-none text-schoolRed/10;
+}
+
+.img-fallback {
+  @apply flex h-full w-full items-center justify-center bg-schoolRed text-white;
+}
+
+.services-marquee {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.services-marquee-track {
+  animation: services-scroll 30s linear infinite;
+}
+
+.services-marquee:hover .services-marquee-track {
+  animation-play-state: paused;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.motion-reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+.motion-reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes services-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes orb-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, 18px, 0) scale(1.05);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .services-marquee-track {
+    animation: none;
+  }
+
+  body::before,
+  body::after,
+  .motion-reveal {
+    animation: none;
+    transition: none;
+  }
+
+  .motion-reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
