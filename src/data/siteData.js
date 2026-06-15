@@ -81,7 +81,6 @@ export const campusOptions = [
 export const classOptions = ['Nursery', 'Prep', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Pre 9th', 'P.G'];
 
 export const officialQuickLinks = [
-  { label: 'Login', path: '/login' },
   { label: 'Staff Login', path: '/forms/staff-login' },
   { label: 'Online Admission', path: '/forms/online-admission' },
   { label: 'Complain', path: '/complain' },

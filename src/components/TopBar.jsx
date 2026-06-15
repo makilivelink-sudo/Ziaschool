@@ -15,13 +15,6 @@ export default function TopBar() {
           </Link>
 
           <Link
-            to="/login"
-            className="inline-flex w-full items-center justify-center rounded-full bg-schoolBlueDark px-4 py-2 text-center text-sm font-bold text-white shadow-sm transition hover:bg-schoolBlue sm:w-auto sm:px-5 sm:py-3"
-          >
-            Login
-          </Link>
-
-          <Link
             to="/admin"
             className="inline-flex w-full items-center justify-center rounded-full bg-schoolRed px-4 py-2 text-center text-sm font-bold text-white shadow-sm transition hover:bg-red-700 sm:w-auto sm:px-5 sm:py-3"
           >
