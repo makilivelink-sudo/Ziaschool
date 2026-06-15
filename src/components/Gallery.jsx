@@ -100,9 +100,6 @@ export default function Gallery() {
             >
               Add Image
             </button>
-            <span className="rounded-full border border-white/60 bg-white/45 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-schoolBlueDark/80 backdrop-blur">
-              Upload your own school image
-            </span>
           </div>
         </div>
 
@@ -147,16 +144,16 @@ export default function Gallery() {
 
         {uploadedImages.length ? (
           <div className="mx-auto mt-8 max-w-6xl">
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="grid grid-cols-1 justify-items-center gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {uploadedImages.map((image, index) => (
                 <button
                   key={image.name}
                   type="button"
                   onClick={() => setActiveImage(image)}
-                  className={`gallery-float ${floatStyles[index % floatStyles.length]} relative h-36 w-48 overflow-hidden rounded-[24px] border border-white/55 bg-white shadow-[0_18px_40px_rgba(10,31,68,0.14)] transition hover:-translate-y-1 sm:h-40 sm:w-56`}
+                  className={`gallery-float ${floatStyles[index % floatStyles.length]} relative aspect-[4/3] w-full max-w-[320px] overflow-hidden rounded-[24px] border border-white/55 bg-white shadow-[0_18px_40px_rgba(10,31,68,0.14)] transition hover:-translate-y-1`}
                   style={{ animationDelay: `${index * 0.35}s` }}
                 >
-                  <img src={image.src} alt={image.name} className="h-full w-full object-cover" />
+                  <img src={image.src} alt={image.name} className="h-full w-full object-cover object-center" />
                 </button>
               ))}
             </div>
