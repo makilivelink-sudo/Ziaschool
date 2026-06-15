@@ -93,7 +93,7 @@ export const officialQuickLinks = [
 
 export const officialDropdownData = [
   {
-    title: 'EXPLORE ZIA',
+    title: 'EXPLORE',
     source: 'https://zia.edu.pk/v2/',
     items: [
       {
@@ -689,7 +689,7 @@ export const officialDropdownData = [
     ],
   },
   {
-    title: 'WHAT MAKES US DIFFERENT',
+    title: 'WHY US',
     source: 'https://zia.edu.pk/v2/',
     items: [
       {

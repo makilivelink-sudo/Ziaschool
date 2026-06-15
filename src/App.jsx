@@ -2,7 +2,6 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import HeroSlider from './components/HeroSlider';
 import AboutUs from './components/AboutUs';
-import HomeworkSearch from './components/HomeworkSearch';
 import OurServices from './components/OurServices';
 import Testimonials from './components/Testimonials';
 import Gallery from './components/Gallery';
@@ -28,9 +27,6 @@ function HomePage() {
         </Reveal>
         <Reveal delay={80}>
           <AboutUs />
-        </Reveal>
-        <Reveal delay={120}>
-          <HomeworkSearch />
         </Reveal>
         <Reveal delay={160}>
           <OurServices />

@@ -31,9 +31,7 @@ function ReviewCard({ item, featured = false, tone = 'cream', onDelete, onSelect
     <article
       onClick={onSelect}
       className={`group relative flex h-[330px] cursor-pointer flex-col justify-between overflow-hidden rounded-[28px] px-6 py-6 shadow-[0_22px_50px_rgba(15,23,42,0.08)] transition-all duration-300 sm:h-[360px] sm:px-8 sm:py-8 ${
-        featured
-          ? 'bg-schoolBlueDark text-white shadow-[0_24px_55px_rgba(20,58,123,0.24)]'
-          : toneClasses
+        featured ? 'bg-schoolBlueDark text-white shadow-[0_24px_55px_rgba(20,58,123,0.24)]' : toneClasses
       }`}
     >
       <button
@@ -45,11 +43,11 @@ function ReviewCard({ item, featured = false, tone = 'cream', onDelete, onSelect
         aria-label={`Delete review from ${item.name}`}
         className="absolute right-3 top-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-lg leading-none text-slate-500 transition hover:bg-white group-hover:bg-white"
       >
-        ×
+        x
       </button>
 
       <div>
-        <div className="text-xl leading-none tracking-[0.15em] text-amber-400">★★★★★</div>
+        <div className="text-sm font-bold tracking-[0.4em] text-amber-400">*****</div>
 
         <p
           style={{
@@ -83,11 +81,6 @@ function ReviewCard({ item, featured = false, tone = 'cream', onDelete, onSelect
 }
 
 export default function Testimonials() {
-  const [formData, setFormData] = useState({
-    name: '',
-    date: '',
-    review: '',
-  });
   const [reviews, setReviews] = useState(initialReviews);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -101,35 +94,6 @@ export default function Testimonials() {
       setActiveIndex(reviews.length - 1);
     }
   }, [reviews, activeIndex]);
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormData((current) => ({
-      ...current,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    if (!formData.name.trim() || !formData.date.trim() || !formData.review.trim()) return;
-
-    setReviews((current) => [
-      {
-        name: formData.name.trim(),
-        date: formData.date.trim(),
-        review: formData.review.trim(),
-      },
-      ...current,
-    ]);
-    setActiveIndex(0);
-    setFormData({
-      name: '',
-      date: '',
-      review: '',
-    });
-  };
 
   const handleDelete = (index) => {
     setReviews((current) => current.filter((_, currentIndex) => currentIndex !== index));
@@ -148,7 +112,7 @@ export default function Testimonials() {
 
   const carouselItems =
     reviews.length > 1
-          ? [
+      ? [
           ...reviews.map((item, index) => ({
             ...item,
             originalIndex: index,
@@ -172,9 +136,7 @@ export default function Testimonials() {
       <div className="container-page">
         <div className="mb-8 flex items-start justify-between gap-4 sm:mb-10">
           <div>
-            <h2 className="text-3xl font-bold tracking-tight text-schoolBlueDark sm:text-[2.1rem]">
-              Parents Reviews
-            </h2>
+            <h2 className="text-3xl font-bold tracking-tight text-schoolBlueDark sm:text-[2.1rem]">Parents Reviews</h2>
           </div>
 
           <div className="flex shrink-0 items-center gap-2 pt-1">
@@ -184,7 +146,7 @@ export default function Testimonials() {
               aria-label="Previous review"
               className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-schoolBlueDark text-xl font-light text-white shadow-[0_10px_25px_rgba(20,58,123,0.18)] transition hover:bg-schoolBlue"
             >
-              ←
+              &lt;
             </button>
             <button
               type="button"
@@ -192,59 +154,10 @@ export default function Testimonials() {
               aria-label="Next review"
               className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-schoolBlueDark text-xl font-light text-white shadow-[0_10px_25px_rgba(20,58,123,0.18)] transition hover:bg-schoolBlue"
             >
-              →
+              &gt;
             </button>
           </div>
         </div>
-
-        <form
-          onSubmit={handleSubmit}
-          className="mb-10 rounded-[28px] border border-[#f3dfb7] bg-[#fff8eb] px-5 py-6 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:px-8 sm:py-8"
-        >
-          <div className="grid gap-4 md:grid-cols-[1fr_220px]">
-            <label className="block">
-              <span className="mb-2 block text-sm font-semibold text-slate-700">Name</span>
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="Parent name"
-                className="input-field border-[#ead9b7] bg-[#fffdf7]"
-              />
-            </label>
-
-            <label className="block">
-              <span className="mb-2 block text-sm font-semibold text-slate-700">Date</span>
-              <input
-                type="text"
-                name="date"
-                value={formData.date}
-                onChange={handleChange}
-                placeholder="25 Aug, 2024"
-                className="input-field border-[#ead9b7] bg-[#fffdf7]"
-              />
-            </label>
-          </div>
-
-          <label className="mt-4 block">
-            <span className="mb-2 block text-sm font-semibold text-slate-700">Review</span>
-            <textarea
-              name="review"
-              value={formData.review}
-              onChange={handleChange}
-              rows="4"
-              placeholder="Write parent review here"
-              className="input-field resize-none border-[#ead9b7] bg-[#fffdf7]"
-            />
-          </label>
-
-          <div className="mt-5 flex justify-end">
-            <button type="submit" className="btn-red">
-              Add Review
-            </button>
-          </div>
-        </form>
 
         <div
           className="[--cards-per-view:1] [--carousel-gap:1rem] lg:[--cards-per-view:3] lg:[--carousel-gap:1.25rem]"
