@@ -28,7 +28,7 @@ export default function TestScheduling() {
 
               <div className="relative z-10 flex h-full flex-col">
                 <span className="w-fit rounded-full bg-white px-4 py-2 text-sm font-medium text-slate-900 shadow-sm">
-                  {item.title}
+                  {item.badge || item.title}
                 </span>
 
                 <div className="mt-auto max-w-[16rem] pb-1">

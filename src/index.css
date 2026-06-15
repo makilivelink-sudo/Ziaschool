@@ -123,6 +123,25 @@ body::after {
   transform: translateY(0);
 }
 
+.gallery-float {
+  animation-name: gallery-float;
+  animation-duration: 7s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.gallery-float-slow {
+  animation-duration: 8.5s;
+}
+
+.gallery-float-medium {
+  animation-duration: 7.4s;
+}
+
+.gallery-float-fast {
+  animation-duration: 6.4s;
+}
+
 @keyframes services-scroll {
   from {
     transform: translateX(0);
@@ -142,6 +161,22 @@ body::after {
   }
 }
 
+@keyframes gallery-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate3d(0, -10px, 0) rotate(-0.6deg);
+  }
+  50% {
+    transform: translate3d(0, 6px, 0) rotate(0.8deg);
+  }
+  75% {
+    transform: translate3d(0, -5px, 0) rotate(-0.3deg);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .services-marquee-track {
     animation: none;
@@ -149,6 +184,7 @@ body::after {
 
   body::before,
   body::after,
+  .gallery-float,
   .motion-reveal {
     animation: none;
     transition: none;

@@ -51,7 +51,7 @@ export default function OurServices() {
                         isBlue ? 'bg-white text-schoolBlueDark' : 'bg-[#fffdf7] text-schoolBlueDark'
                       }`}
                     >
-                      {item.label}
+                      {item.badge || item.label}
                     </div>
 
                     <div className="max-w-[17rem]">

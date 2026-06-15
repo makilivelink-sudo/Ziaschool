@@ -882,16 +882,19 @@ export const menuItems = officialDropdownData.map(({ title, items }) => ({
 export const serviceCards = [
   {
     label: 'Education',
+    badge: 'Digital Classrooms',
     path: '/page/education',
     description: 'Focused academics that build concepts, confidence, and strong study habits.',
   },
   {
     label: 'Smart Classes',
+    badge: 'Teacher Training',
     path: '/page/smart-classes',
     description: 'Interactive learning spaces that use modern tools to make lessons clearer and more engaging.',
   },
   {
     label: 'Staff Development',
+    badge: 'Student Dashboard',
     path: '/page/staff-development',
     description: 'Training and growth support that helps teachers stay effective, confident, and up to date.',
   },
@@ -931,18 +934,21 @@ export const testSchedulingList = [
   {
     slug: 'weekly-test-plan',
     title: 'Weekly Test Plan',
+    badge: 'Quiz Planner',
     description: 'Chapter-wise test, subject revision, and weekly preparation.',
     tone: 'blue',
   },
   {
     slug: 'midterm-schedule',
     title: 'Midterm Schedule',
+    badge: 'Mid Exam Timetable',
     description: 'Half-book test coverage with subject-wise planning.',
     tone: 'red',
   },
   {
     slug: 'final-assessment',
     title: 'Final Assessment',
+    badge: 'End Term Evaluation',
     description: 'Full-book final test with exam preparation guidance.',
     tone: 'blue',
   },
