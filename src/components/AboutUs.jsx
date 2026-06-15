@@ -1,6 +1,5 @@
 import { founderImage } from '../data/siteData';
 import FallbackImage from './FallbackImage';
-import { motion } from 'framer-motion';
 
 export default function AboutUs() {
   return (
@@ -81,26 +80,10 @@ export default function AboutUs() {
           </div>
 
           <div className="relative mx-auto w-full max-w-[470px] lg:mr-0">
-            <motion.div
-              className="absolute -left-6 top-20 h-16 w-16 rounded-full bg-[#ffb400] shadow-lg"
-              animate={{ y: [0, -12, 0], x: [0, 6, 0] }}
-              transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }}
-            />
-            <motion.div
-              className="absolute -left-2 bottom-8 h-12 w-12 rounded-full bg-[#ff4d3d]"
-              animate={{ y: [0, 10, 0], x: [0, -5, 0] }}
-              transition={{ duration: 4.8, repeat: Infinity, ease: 'easeInOut', delay: 0.2 }}
-            />
-            <motion.div
-              className="absolute -right-3 bottom-16 h-14 w-14 rounded-full bg-[#ffb400] shadow-lg"
-              animate={{ y: [0, -10, 0], x: [0, -7, 0] }}
-              transition={{ duration: 5.2, repeat: Infinity, ease: 'easeInOut', delay: 0.35 }}
-            />
-            <motion.div
-              className="absolute -right-6 top-24 h-10 w-10 rounded-full bg-[#ffb400]"
-              animate={{ y: [0, 8, 0], x: [0, 5, 0] }}
-              transition={{ duration: 4.6, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
-            />
+            <div className="absolute -left-6 top-20 h-16 w-16 rounded-full bg-[#ffb400] shadow-lg" />
+            <div className="absolute -left-2 bottom-8 h-12 w-12 rounded-full bg-[#ff4d3d]" />
+            <div className="absolute -right-3 bottom-16 h-14 w-14 rounded-full bg-[#ffb400] shadow-lg" />
+            <div className="absolute -right-6 top-24 h-10 w-10 rounded-full bg-[#ffb400]" />
 
             <div className="relative rounded-full border-[6px] border-[#ff1717] bg-white p-2 shadow-2xl">
               <div className="overflow-hidden rounded-full">
