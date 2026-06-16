@@ -123,23 +123,18 @@ body::after {
   transform: translateY(0);
 }
 
-.gallery-float {
-  animation-name: gallery-float;
-  animation-duration: 7s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
+.gallery-marquee {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
 }
 
-.gallery-float-slow {
-  animation-duration: 8.5s;
+.gallery-marquee-track {
+  animation: gallery-marquee-scroll 26s linear infinite;
+  will-change: transform;
 }
 
-.gallery-float-medium {
-  animation-duration: 7.4s;
-}
-
-.gallery-float-fast {
-  animation-duration: 6.4s;
+.gallery-marquee:hover .gallery-marquee-track {
+  animation-play-state: paused;
 }
 
 .about-orb {
@@ -188,19 +183,12 @@ body::after {
   }
 }
 
-@keyframes gallery-float {
-  0%,
+@keyframes gallery-marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
   100% {
-    transform: translate3d(0, 0, 0) rotate(0deg);
-  }
-  25% {
-    transform: translate3d(0, -10px, 0) rotate(-0.6deg);
-  }
-  50% {
-    transform: translate3d(0, 6px, 0) rotate(0.8deg);
-  }
-  75% {
-    transform: translate3d(0, -5px, 0) rotate(-0.3deg);
+    transform: translateX(-50%);
   }
 }
 
@@ -228,7 +216,7 @@ body::after {
   body::before,
   body::after,
   .about-orb,
-  .gallery-float,
+  .gallery-marquee-track,
   .motion-reveal {
     animation: none;
     transition: none;

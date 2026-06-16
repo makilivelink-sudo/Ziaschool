@@ -20,17 +20,12 @@ const baseTiles = [
   },
 ];
 
-const floatStyles = [
-  'gallery-float-slow',
-  'gallery-float-medium',
-  'gallery-float-fast',
-];
-
 export default function Gallery() {
   const inputRef = useRef(null);
   const objectUrlsRef = useRef([]);
   const [activeImage, setActiveImage] = useState(null);
   const [uploadedImages, setUploadedImages] = useState([]);
+  const marqueeImages = uploadedImages.length ? [...uploadedImages, ...uploadedImages] : [];
 
   useEffect(() => {
     const handleKeyDown = (event) => {
@@ -116,10 +111,7 @@ export default function Gallery() {
           {baseTiles.map((tile, index) => (
             <div
               key={tile.image.original}
-              className={`gallery-float relative select-none ${tile.size} ${
-                index === 1 ? 'md:-mt-10 md:z-20' : 'md:z-10'
-              }`}
-              style={{ animationDelay: `${index * 0.9}s` }}
+              className={`relative select-none ${tile.size} ${index === 1 ? 'md:-mt-10 md:z-20' : 'md:z-10'}`}
             >
               <button
                 type="button"
@@ -143,15 +135,14 @@ export default function Gallery() {
         </div>
 
         {uploadedImages.length ? (
-          <div className="mx-auto mt-8 max-w-6xl">
-            <div className="grid grid-cols-1 justify-items-center gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {uploadedImages.map((image, index) => (
+          <div className="gallery-marquee mx-auto mt-8 max-w-7xl overflow-hidden">
+            <div className="gallery-marquee-track flex w-max gap-4 py-2">
+              {marqueeImages.map((image, index) => (
                 <button
-                  key={image.name}
+                  key={`${image.name}-${index}`}
                   type="button"
                   onClick={() => setActiveImage(image)}
-                  className={`gallery-float ${floatStyles[index % floatStyles.length]} relative aspect-[4/3] w-full max-w-[320px] overflow-hidden rounded-[24px] border border-white/55 bg-white shadow-[0_18px_40px_rgba(10,31,68,0.14)] transition hover:-translate-y-1`}
-                  style={{ animationDelay: `${index * 0.35}s` }}
+                  className="gallery-marquee-card relative aspect-[4/3] w-[240px] flex-none overflow-hidden rounded-[24px] border border-white/55 bg-white shadow-[0_18px_40px_rgba(10,31,68,0.14)] transition hover:-translate-y-1 sm:w-[280px] lg:w-[320px]"
                 >
                   <img src={image.src} alt={image.name} className="h-full w-full object-cover object-center" />
                 </button>
