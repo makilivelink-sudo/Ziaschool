@@ -28,7 +28,7 @@ export default function HeroSlider() {
             <img
               src={slide.src}
               alt={`Hero slide ${slideIndex + 1}`}
-              className="absolute inset-0 h-full w-full object-cover object-center"
+              className="absolute inset-0 h-full w-full bg-black object-contain object-center md:object-cover"
             />
           </div>
         ))}

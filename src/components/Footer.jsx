@@ -132,12 +132,14 @@ export default function Footer() {
                 ].map((item) => {
                   const sharedClass =
                     'group flex w-full items-center justify-between py-2 text-left transition duration-300 hover:text-white';
+                  const arrowClass =
+                    'transition duration-300 group-hover:translate-x-1';
 
                   if (item.kind === 'link') {
                     return (
                       <Link key={item.label} to={item.href} onClick={item.action} className={sharedClass}>
                         <span>{item.label}</span>
-                        <span className="opacity-0 transition duration-300 group-hover:translate-x-1 group-hover:opacity-100">
+                        <span className={arrowClass}>
                           -&gt;
                         </span>
                       </Link>
@@ -147,7 +149,7 @@ export default function Footer() {
                   return (
                     <button key={item.label} type="button" onClick={item.action} className={sharedClass}>
                       <span>{item.label}</span>
-                      <span className="opacity-0 transition duration-300 group-hover:translate-x-1 group-hover:opacity-100">
+                      <span className={arrowClass}>
                         -&gt;
                       </span>
                     </button>
