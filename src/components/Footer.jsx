@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { footerLogo } from '../data/siteData';
 import FallbackImage from './FallbackImage';
 import ActionModal from './ActionModal';
@@ -124,24 +124,34 @@ export default function Footer() {
             <div>
               <h3 className="text-xl font-bold">Quick Links</h3>
               <div className="mt-4 space-y-1 text-[15px] font-semibold tracking-wide text-white/90">
-                {[
-                  { label: 'Home', action: openHome },
-                  { label: 'About Us', action: () => openSection('about') },
-                  { label: 'Complain', action: () => setModal('complain') },
-                  { label: 'Feedback', action: () => setModal('feedback') },
-                ].map((item) => (
-                  <button
-                    key={item.label}
-                    type="button"
-                    onClick={item.action}
-                    className="group flex w-full items-center gap-2 py-2 text-left transition duration-300 hover:text-white"
-                  >
-                    <span>{item.label}</span>
-                    <span className="opacity-0 transition duration-300 group-hover:translate-x-1 group-hover:opacity-100">
-                      -&gt;
-                    </span>
-                  </button>
-                ))}
+                <Link
+                  to="/"
+                  onClick={openHome}
+                  className="block py-2 transition duration-300 hover:text-white"
+                >
+                  Home
+                </Link>
+                <button
+                  type="button"
+                  onClick={() => openSection('about')}
+                  className="block w-full py-2 text-left transition duration-300 hover:text-white"
+                >
+                  About Us
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setModal('complain')}
+                  className="block w-full py-2 text-left transition duration-300 hover:text-white"
+                >
+                  Complain
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setModal('feedback')}
+                  className="block w-full py-2 text-left transition duration-300 hover:text-white"
+                >
+                  Feedback
+                </button>
               </div>
             </div>
 

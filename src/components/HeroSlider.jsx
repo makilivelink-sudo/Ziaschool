@@ -14,7 +14,7 @@ export default function HeroSlider() {
 
   return (
     <section id="home" className="relative z-0 overflow-hidden bg-black">
-      <div className="relative h-[72vh] min-h-[540px] w-full">
+      <div className="relative h-[calc(100svh-88px)] min-h-[480px] w-full md:h-[72vh] md:min-h-[540px]">
         {heroSlides.map((slide, slideIndex) => (
           <div
             key={slide.original}
@@ -28,7 +28,7 @@ export default function HeroSlider() {
             <img
               src={slide.src}
               alt={`Hero slide ${slideIndex + 1}`}
-              className="absolute inset-0 h-full w-full object-cover"
+              className="absolute inset-0 h-full w-full object-cover object-center"
             />
           </div>
         ))}

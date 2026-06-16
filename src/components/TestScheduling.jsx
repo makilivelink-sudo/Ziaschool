@@ -14,12 +14,12 @@ export default function TestScheduling() {
           <h2 className="text-3xl font-semibold tracking-tight text-slate-800 sm:text-5xl">Test Scheduling</h2>
         </div>
 
-        <div className="mt-14 flex justify-center gap-6 overflow-x-auto pb-4 snap-x snap-mandatory lg:gap-8">
+        <div className="mt-14 grid gap-6 lg:grid-cols-3 lg:gap-8">
           {testSchedulingList.map((item, index) => (
             <Link
               key={item.slug}
               to={`/page/${item.slug}`}
-              className={`group relative min-h-[360px] w-[360px] shrink-0 snap-start overflow-hidden rounded-[28px] border-[8px] border-[#d6d9e6] p-6 text-left text-white shadow-[0_18px_45px_rgba(15,23,42,0.12)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_55px_rgba(15,23,42,0.18)] ${cardTheme[item.tone]}`}
+              className={`group relative min-h-[320px] overflow-hidden rounded-[28px] border-[8px] border-[#d6d9e6] p-6 text-left text-white shadow-[0_18px_45px_rgba(15,23,42,0.12)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_55px_rgba(15,23,42,0.18)] sm:min-h-[360px] ${cardTheme[item.tone]}`}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-white/0 via-white/0 to-black/10" />
               <div className="absolute right-5 top-5 h-[118px] w-[118px] rounded-full border-2 border-white/18" />
