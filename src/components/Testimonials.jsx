@@ -21,7 +21,7 @@ const initialReviews = [
   },
 ];
 
-function ReviewCard({ item, featured = false, tone = 'cream', onDelete, onSelect }) {
+function ReviewCard({ item, featured = false, tone = 'cream', onSelect }) {
   const toneClasses =
     tone === 'white'
       ? 'border border-[#e7d8b8] bg-white text-slate-700 hover:border-[#dcc899] hover:bg-[#fffefb] hover:shadow-[0_24px_55px_rgba(15,23,42,0.10)]'
@@ -34,18 +34,6 @@ function ReviewCard({ item, featured = false, tone = 'cream', onDelete, onSelect
         featured ? 'bg-schoolBlueDark text-white shadow-[0_24px_55px_rgba(20,58,123,0.24)]' : toneClasses
       }`}
     >
-      <button
-        type="button"
-        onClick={(event) => {
-          event.stopPropagation();
-          onDelete();
-        }}
-        aria-label={`Delete review from ${item.name}`}
-        className="absolute right-3 top-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-lg leading-none text-slate-500 transition hover:bg-white group-hover:bg-white"
-      >
-        x
-      </button>
-
       <div>
         <div className="text-sm font-bold tracking-[0.4em] text-amber-400">*****</div>
 
@@ -81,7 +69,7 @@ function ReviewCard({ item, featured = false, tone = 'cream', onDelete, onSelect
 }
 
 export default function Testimonials() {
-  const [reviews, setReviews] = useState(initialReviews);
+  const [reviews] = useState(initialReviews);
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
@@ -94,11 +82,6 @@ export default function Testimonials() {
       setActiveIndex(reviews.length - 1);
     }
   }, [reviews, activeIndex]);
-
-  const handleDelete = (index) => {
-    setReviews((current) => current.filter((_, currentIndex) => currentIndex !== index));
-    setActiveIndex((current) => Math.max(0, current === index ? current - 1 : current > index ? current - 1 : current));
-  };
 
   const goToPrevious = () => {
     if (!reviews.length) return;
@@ -179,7 +162,6 @@ export default function Testimonials() {
                     featured={index === activeIndex}
                     tone={item.tone}
                     onSelect={() => setActiveIndex(item.originalIndex)}
-                    onDelete={() => handleDelete(item.originalIndex)}
                   />
                 </div>
               ))}
