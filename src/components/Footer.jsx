@@ -133,7 +133,7 @@ export default function Footer() {
                   const sharedClass =
                     'group flex w-full items-center justify-between py-2 text-left transition duration-300 hover:text-white';
                   const arrowClass =
-                    'transition duration-300 group-hover:translate-x-1';
+                    'opacity-0 transition duration-300 group-hover:translate-x-1 group-hover:opacity-100';
 
                   if (item.kind === 'link') {
                     return (
