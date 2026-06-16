@@ -881,40 +881,40 @@ export const menuItems = officialDropdownData.map(({ title, items }) => ({
 
 export const serviceCards = [
   {
-    label: 'Student Portal',
+    label: 'Smart Classes',
     badge: 'Digital Classrooms',
+    path: '/page/smart-classes',
+    description: 'Interactive learning spaces that use modern tools to make lessons clearer and more engaging.',
+  },
+  {
+    label: 'Staff Development',
+    badge: 'Teacher Training',
+    path: '/page/staff-development',
+    description: 'Training and growth support that helps teachers stay effective, confident, and up to date.',
+  },
+  {
+    label: 'Student Portal',
+    badge: 'Student Dashboard',
     path: '/page/student-portal',
     description: 'Easy access to student information, updates, and school-related resources anytime.',
   },
   {
     label: 'Parent Support',
-    badge: 'Teacher Training',
+    badge: 'Moral Support',
     path: '/page/parent-support',
     description: 'Clear communication and guidance that keep parents informed, connected, and supported.',
   },
   {
     label: 'Discipline & Guidance',
-    badge: 'Student Dashboard',
+    badge: 'Character Development',
     path: '/page/discipline-guidance',
     description: 'A disciplined school environment with mentoring, structure, and behavior guidance.',
   },
   {
-    label: 'Student Hub',
-    badge: 'Moral Support',
+    label: 'Education',
+    badge: 'Life Skills',
     path: '/page/education',
     description: 'Focused academics that build concepts, confidence, and strong study habits.',
-  },
-  {
-    label: 'Parent Gateway',
-    badge: 'Character Development',
-    path: '/page/smart-classes',
-    description: 'Interactive learning spaces that use modern tools to make lessons clearer and more engaging.',
-  },
-  {
-    label: 'Behavior & Mentoring',
-    badge: 'Life Skills',
-    path: '/page/staff-development',
-    description: 'Training and growth support that helps teachers stay effective, confident, and up to date.',
   },
 ];
 
