@@ -881,24 +881,6 @@ export const menuItems = officialDropdownData.map(({ title, items }) => ({
 
 export const serviceCards = [
   {
-    label: 'Student Portal',
-    badge: 'Student Portal',
-    path: '/page/student-portal',
-    description: 'Easy access to student information, updates, and school-related resources anytime.',
-  },
-  {
-    label: 'Parent Support',
-    badge: 'Parent Support',
-    path: '/page/parent-support',
-    description: 'Clear communication and guidance that keep parents informed, connected, and supported.',
-  },
-  {
-    label: 'Discipline & Guidance',
-    badge: 'Discipline & Guidance',
-    path: '/page/discipline-guidance',
-    description: 'A disciplined school environment with mentoring, structure, and behavior guidance.',
-  },
-  {
     label: 'Student Hub',
     badge: 'Student Hub',
     path: '/page/education',
@@ -915,6 +897,24 @@ export const serviceCards = [
     badge: 'Behavior & Mentoring',
     path: '/page/staff-development',
     description: 'Training and growth support that helps teachers stay effective, confident, and up to date.',
+  },
+  {
+    label: 'Student Portal',
+    badge: 'Student Portal',
+    path: '/page/student-portal',
+    description: 'Easy access to student information, updates, and school-related resources anytime.',
+  },
+  {
+    label: 'Parent Support',
+    badge: 'Parent Support',
+    path: '/page/parent-support',
+    description: 'Clear communication and guidance that keep parents informed, connected, and supported.',
+  },
+  {
+    label: 'Discipline & Guidance',
+    badge: 'Discipline & Guidance',
+    path: '/page/discipline-guidance',
+    description: 'A disciplined school environment with mentoring, structure, and behavior guidance.',
   },
 ];
 

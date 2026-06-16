@@ -124,34 +124,35 @@ export default function Footer() {
             <div>
               <h3 className="text-xl font-bold">Quick Links</h3>
               <div className="mt-4 space-y-1 text-[15px] font-semibold tracking-wide text-white/90">
-                <Link
-                  to="/"
-                  onClick={openHome}
-                  className="block py-2 transition duration-300 hover:text-white"
-                >
-                  Home
-                </Link>
-                <button
-                  type="button"
-                  onClick={() => openSection('about')}
-                  className="block w-full py-2 text-left transition duration-300 hover:text-white"
-                >
-                  About Us
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setModal('complain')}
-                  className="block w-full py-2 text-left transition duration-300 hover:text-white"
-                >
-                  Complain
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setModal('feedback')}
-                  className="block w-full py-2 text-left transition duration-300 hover:text-white"
-                >
-                  Feedback
-                </button>
+                {[
+                  { label: 'Home', action: openHome, kind: 'link', href: '/' },
+                  { label: 'About Us', action: () => openSection('about'), kind: 'button' },
+                  { label: 'Complain', action: () => setModal('complain'), kind: 'button' },
+                  { label: 'Feedback', action: () => setModal('feedback'), kind: 'button' },
+                ].map((item) => {
+                  const sharedClass =
+                    'group flex w-full items-center justify-between py-2 text-left transition duration-300 hover:text-white';
+
+                  if (item.kind === 'link') {
+                    return (
+                      <Link key={item.label} to={item.href} onClick={item.action} className={sharedClass}>
+                        <span>{item.label}</span>
+                        <span className="opacity-0 transition duration-300 group-hover:translate-x-1 group-hover:opacity-100">
+                          -&gt;
+                        </span>
+                      </Link>
+                    );
+                  }
+
+                  return (
+                    <button key={item.label} type="button" onClick={item.action} className={sharedClass}>
+                      <span>{item.label}</span>
+                      <span className="opacity-0 transition duration-300 group-hover:translate-x-1 group-hover:opacity-100">
+                        -&gt;
+                      </span>
+                    </button>
+                  );
+                })}
               </div>
             </div>
 
